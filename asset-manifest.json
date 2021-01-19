@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/rileyb123.github.io/static/css/main.79774492.chunk.css",
-    "main.js": "/rileyb123.github.io/static/js/main.712764c2.chunk.js",
-    "main.js.map": "/rileyb123.github.io/static/js/main.712764c2.chunk.js.map",
+    "main.css": "/rileyb123.github.io/static/css/main.023fcac2.chunk.css",
+    "main.js": "/rileyb123.github.io/static/js/main.a0eedd56.chunk.js",
+    "main.js.map": "/rileyb123.github.io/static/js/main.a0eedd56.chunk.js.map",
     "runtime-main.js": "/rileyb123.github.io/static/js/runtime-main.f5fa3a15.js",
     "runtime-main.js.map": "/rileyb123.github.io/static/js/runtime-main.f5fa3a15.js.map",
     "static/js/2.6311ff79.chunk.js": "/rileyb123.github.io/static/js/2.6311ff79.chunk.js",
     "static/js/2.6311ff79.chunk.js.map": "/rileyb123.github.io/static/js/2.6311ff79.chunk.js.map",
     "index.html": "/rileyb123.github.io/index.html",
-    "static/css/main.79774492.chunk.css.map": "/rileyb123.github.io/static/css/main.79774492.chunk.css.map",
+    "static/css/main.023fcac2.chunk.css.map": "/rileyb123.github.io/static/css/main.023fcac2.chunk.css.map",
     "static/js/2.6311ff79.chunk.js.LICENSE.txt": "/rileyb123.github.io/static/js/2.6311ff79.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/rileyb123.github.io/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f5fa3a15.js",
     "static/js/2.6311ff79.chunk.js",
-    "static/css/main.79774492.chunk.css",
-    "static/js/main.712764c2.chunk.js"
+    "static/css/main.023fcac2.chunk.css",
+    "static/js/main.a0eedd56.chunk.js"
   ]
 }
