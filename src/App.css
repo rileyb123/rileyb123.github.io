@@ -7,6 +7,18 @@
   pointer-events: none;
 }
 
+.Another {
+  background-color: #e4c465;
+  animation: progressBar 5s ease-in-out;
+  animation-fill-mode:both; 
+  
+}
+
+@keyframes Another {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
