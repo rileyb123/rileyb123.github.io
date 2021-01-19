@@ -8,10 +8,13 @@ function App() {
   console.log("This is the process.env", process.env.PUBLIC_URL);
   return (
 
-    <Router>
+  
+    <Router basename={process.env.PUBLIC_URL}>
+    
     <div className="App">
+    
     <Switch>
-            <Route exact path='/rileyb123.github.io' >
+            <Route exact path='/' >
             <Another />
             </Route>
             <Route exact path='/anotherOne'>
