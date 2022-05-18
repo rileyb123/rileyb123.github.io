@@ -41,4 +41,21 @@ function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+(function() {
+    $('form > input').change(function() {
+
+        var empty = false;
+        $('form > input').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('#submit').attr('disabled', 'disabled'); 
+            $('#submit').removeAttr('disabled'); 
+        }
+    });
+})()
+
 

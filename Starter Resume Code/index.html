@@ -17,21 +17,19 @@
     <link rel="stylesheet" href="Resume.css?v=1.0">
     </head>
     <body onload="setUp();">
+        <center>
         <form id="resume-box">
-            <input type="hidden" id="fairly-unique-id" value="Submission.html" />
             <div id="resume-title">
-                <h1>
-                    Submit Your Resume
+                <h1 style="color: black;">
+                    Supper Special Anti Robot Resume Form
                 </h1>
             </div>
             <div id="resume-inputs">
                 <div id="resume-name">
                     <br />
                     <h1>To Enter First Name Please Select Correct Picture Part</h1>
-                    <input style="display:none" type="text" name="" class="validationValue">
                     <div id="PuzzleCaptcha"></div>
                     <label for="first-name">First Name:</label>
-                    <input placeholder="First Name" class="btn btn-lg btn-primary btn-block btnSubmit" disabled="true" />
                     <script>
 
                         $("#PuzzleCaptcha").PuzzleCAPTCHA({
@@ -43,6 +41,7 @@
             
                     </script>
                     <br />
+                    <input class="btn btn-lg btn-primary btn-block btnSubmit" disabled="true" placeholder="First Name" type="text"></input>
                     <br />
                     
                     <div class="second-captcha">
@@ -52,11 +51,54 @@
                         <label for="last-name">Last Name:</label>
                         <input type="text" id="last-name" name="last-name" placeholder="Last Name" disabled="true" />
                 </div>
-                <div id="resume-dob">
-                    <br />
-                    <br />
-                    <label for="date">Date of Birth:</label>
-                    <input type="date" id="date" name="date" />
+                <div class="column">
+                    <p>
+                        Please enter your birthdate.
+                    </p>
+                    <div class="row">
+                        <div class="two columns">
+                            <label>Day</label>
+                            <select id="daySelect" class="u-full-width">
+                                <script>
+                                    for (let i = 1; i <= 31; i++) {
+                                        document.write("<option value='" + i + "'>" + i + "</option>")
+                                    }
+                                </script>
+                            </select>
+                        </div>
+                        <div class="three columns">
+                            <label>Month</label>
+                            <select id="monthSelect" class="u-full-width">
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="three columns">
+                            <label>Year</label>
+                            <select id="yearSelect" class="u-full-width">
+                                <script>
+                                    for (let i = -9999; i <= 9999; i++) {
+                                        document.write("<option value='" + i + "'>" + Math.abs(i) + (i < 0 ? " b.c." : "") + "</option>")
+                                    }
+                                </script>
+                            </select>
+                        </div>
+                    </div>
+                    <script>
+                        global.randomizeChildren("#daySelect");
+                        global.randomizeChildren("#monthSelect");
+                    </script>
+                    <hr>
                 </div>
                 <div id="resume-email">
                     <br />
@@ -68,7 +110,7 @@
                     <br />
                     <br />
                     <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" value="111-222-3333" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
                 </div>
                 <div id="resume-address">
                     <br />
@@ -83,80 +125,76 @@
                     <br />
                     <textarea id="description" name="description" cols="50" rows="15" maxlength="500"></textarea>
                 </div>
-                <div id="mc">
-                    <p>Please draw the shape in the box to submit the form:</p>
-                    <canvas id="mc-canvas"></canvas>
-                </div>
                 <div id="resume-submit">
                     <br />
                     <br />
-                    <input id ="submit"  type="submit" value="Submit" />
+                    <input id ="submit"  type="submit" value="Submit" disabled="true"/>
                 </div>
             </div>
-            <div class="slidecontainer">
-                <input type="range" min="1" max="10000" value="50" class="slider" id="myRange" >
-                <p>Value: <span id="demo"></span></p>
-                <p>Target Value: <span id="target-value"></span></p>
-                <input id="slider-input" disabled="disabled" />
-                <script>
-                    var slider = document.getElementById("myRange");
-                    var output = document.getElementById("demo");
-                    output.innerHTML = slider.value;
-                    slider.oninput = function() {
-                      output.innerHTML = this.value;
-                      if(slider.value == document.getElementById("target-value").innerHTML){
-                          document.getElementById("slider-input").removeAttribute("disabled");
-                      }
-                      else{
-                        document.getElementById("slider-input").setAttribute("disabled" , "disabled");
-                      }
-                    }
-                    </script>
-              </div>
-              <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-              <script>
-                  var captcha_done = false;
-                  var captcha_url = 'https://vivirenremoto.github.io/squat_captcha/';
-          
-                  function captcha_complete(e) {
-                      if (e.origin.indexOf('vivirenremoto.github.io') > -1) {
-                          captcha_done = true;
-                          jQuery('#squat_captcha').remove();
-                          alert('Wow you actually submitted the form. Great Job');
-                      }
-                  }
-          
-          
-                  function showCaptcha() {
-                      if (captcha_done == false) {
-                          jQuery('body').append('<iframe allow="camera;microphone" id="squat_captcha" src="' + captcha_url + '" style="background:#fff;border:0;position:fixed;top:0;left:0;width:100%;height:100%;"></iframe>');
-                          window.addEventListener('message', captcha_complete, false);
-                      }
-                  }
-          
-                  jQuery(function () {
-                      $('#resume-box').submit(function () {
-                          if (!captcha_done) {
-                              showCaptcha();
-                              event.preventDefault();
-                              return;
-                          }
-                      });
-                  });
-              </script>
-          
-              <!-- Global site tag (gtag.js) - Google Analytics -->
-              <script async src="https://www.googletagmanager.com/gtag/js?id=G-KCB4H1J1XH"></script>
-              <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-          
-                gtag('config', 'G-KCB4H1J1XH');
-              </script>
+            
         </form>
-
+        <div class="slidecontainer">
+            <input type="range" min="1" max="10000" value="50" class="slider" id="myRange" >
+            <p>Value: <span id="demo"></span></p>
+            <p>Target Value: <span id="target-value"></span></p>
+            <input id="slider-input" disabled="disabled" />
+            <script>
+                var slider = document.getElementById("myRange");
+                var output = document.getElementById("demo");
+                output.innerHTML = slider.value;
+                slider.oninput = function() {
+                  output.innerHTML = this.value;
+                  if(slider.value == document.getElementById("target-value").innerHTML){
+                      document.getElementById("slider-input").removeAttribute("disabled");
+                  }
+                  else{
+                    document.getElementById("slider-input").setAttribute("disabled" , "disabled");
+                  }
+                }
+                </script>
+          </div>
+          <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+          <script>
+              var captcha_done = false;
+              var captcha_url = 'https://vivirenremoto.github.io/squat_captcha/';
+      
+              function captcha_complete(e) {
+                  if (e.origin.indexOf('vivirenremoto.github.io') > -1) {
+                      captcha_done = true;
+                      jQuery('#squat_captcha').remove();
+                      alert('Wow you actually submitted the form. Great Job');
+                  }
+              }
+      
+      
+              function showCaptcha() {
+                  if (captcha_done == false) {
+                      jQuery('body').append('<iframe allow="camera;microphone" id="squat_captcha" src="' + captcha_url + '" style="background:#fff;border:0;position:fixed;top:0;left:0;width:100%;height:100%;"></iframe>');
+                      window.addEventListener('message', captcha_complete, false);
+                  }
+              }
+      
+              jQuery(function () {
+                  $('#resume-box').submit(function () {
+                      if (!captcha_done) {
+                          showCaptcha();
+                          event.preventDefault();
+                          return;
+                      }
+                  });
+              });
+          </script>
+      
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-KCB4H1J1XH"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+      
+            gtag('config', 'G-KCB4H1J1XH');
+          </script>
         <script src="Resume.js"></script>
-        
+    </center>
     </body>
 </html>
