@@ -21,7 +21,7 @@
         <form id="resume-box">
             <div id="resume-title">
                 <h1 style="color: black;">
-                    Supper Special Anti Robot Resume Form
+                    Super Special Awesome Resume Form
                 </h1>
             </div>
             <div id="resume-inputs">
@@ -31,25 +31,23 @@
                     <div id="PuzzleCaptcha"></div>
                     <label for="first-name">First Name:</label>
                     <script>
-
                         $("#PuzzleCaptcha").PuzzleCAPTCHA({
-                            rows:3,
+                            rows:5,
                             targetInput:'.validationValue',
                             targetVal:'Validated!!',
                             targetButton:'.btnSubmit'
                         });
-            
                     </script>
                     <br />
-                    <input class="btn btn-lg btn-primary btn-block btnSubmit" disabled="true" placeholder="First Name" type="text"></input>
+                    <input required id="first-name" style="margin-bottom: 2rem;" readonly placeholder="First Name" ></input>
                     <br />
                     
                     <div class="second-captcha">
                         <h1 id="textCaptcha1" class="nohigh"></h1>
-                        To Enter Last Name Please Enter Code<input id="captchaCheck" /> <input type="button" value="Check" onclick="check()" />
+                        To Enter Last Name Please Enter Code<input style="color: black;" id="captchaCheck" /> <input type="button" value="Check" onclick="check()" />
                         </div>
                         <label for="last-name">Last Name:</label>
-                        <input type="text" id="last-name" name="last-name" placeholder="Last Name" disabled="true" />
+                        <input required id="last-name" name="last-name" placeholder="Last Name" readonly />
                 </div>
                 <div class="column">
                     <p>
@@ -94,29 +92,30 @@
                             </select>
                         </div>
                     </div>
-                    <script>
-                        global.randomizeChildren("#daySelect");
-                        global.randomizeChildren("#monthSelect");
-                    </script>
                     <hr>
                 </div>
                 <div id="resume-email">
                     <br />
                     <br />
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" />
+                    <input required type="email" id="email" name="email" />
                 </div>
                 <div id="resume-phone">
                     <br />
                     <br />
                     <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+                    <input required type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
                 </div>
                 <div id="resume-address">
                     <br />
                     <br />
                     <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" />
+                    <input type="text" id="lat" name="geoLat" required style="width: 30%;">
+                    <input type="text" id="long" name="geoLong" required style="width: 30%;"> 
+                <div>
+                    <input value="Submit Location"type="button"onclick="testGEO()"></input>  
+                </div>                  
+                    <textarea id="address"placeholder="SOME PLACEHOLDER TEXT FOR ADDRESS" disabled style="width: 85%; height: 100px;"></textarea>
                 </div>
                 <div id="resume-description">
                     <br />
@@ -128,32 +127,11 @@
                 <div id="resume-submit">
                     <br />
                     <br />
-                    <input id ="submit"  type="submit" value="Submit" disabled="true"/>
+                    <input id ="submit"  type="submit" value="Submit" />
                 </div>
             </div>
             
         </form>
-        <div class="slidecontainer">
-            <input type="range" min="1" max="10000" value="50" class="slider" id="myRange" >
-            <p>Value: <span id="demo"></span></p>
-            <p>Target Value: <span id="target-value"></span></p>
-            <input id="slider-input" disabled="disabled" />
-            <script>
-                var slider = document.getElementById("myRange");
-                var output = document.getElementById("demo");
-                output.innerHTML = slider.value;
-                slider.oninput = function() {
-                  output.innerHTML = this.value;
-                  if(slider.value == document.getElementById("target-value").innerHTML){
-                      document.getElementById("slider-input").removeAttribute("disabled");
-                  }
-                  else{
-                    document.getElementById("slider-input").setAttribute("disabled" , "disabled");
-                  }
-                }
-                </script>
-          </div>
-          <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
           <script>
               var captcha_done = false;
               var captcha_url = 'https://vivirenremoto.github.io/squat_captcha/';
@@ -184,17 +162,17 @@
                   });
               });
           </script>
-      
-          <!-- Global site tag (gtag.js) - Google Analytics -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-KCB4H1J1XH"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-      
-            gtag('config', 'G-KCB4H1J1XH');
-          </script>
         <script src="Resume.js"></script>
+
+        <div>
+            <h1>
+                Thanks to <a href="https://github.com/supop">https://github.com/supop</a> for the Puzzle Captcha
+            </h1>
+            <h1>               
+                 Thanks to <a href="https://github.com/vivirenremoto">https://github.com/vivirenremoto</a> for the Squat Captcha
+            </h1>
+        </div>
     </center>
+
     </body>
 </html>

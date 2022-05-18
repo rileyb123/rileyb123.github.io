@@ -81,7 +81,9 @@
                         $(sets.targetInput).val(sets.targetVal);
                     }
                     if(sets.targetButton!=null){
+                        console.log("here");
                         $(sets.targetButton).prop("disabled",false);
+                        document.getElementById("first-name").removeAttribute("readonly");
                     }
                 }
             });

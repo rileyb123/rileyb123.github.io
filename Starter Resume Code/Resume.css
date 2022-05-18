@@ -2,13 +2,25 @@ body
 {
     color: black;
     background: red;
-  animation: mymove 6s infinite;
+  animation: colorChange 4s infinite;
 }
 
-@keyframes mymove {
-    from {background-color: red;}
-    to {background-color: yellow;}
+@keyframes colorChange {
+    0%,100% { background-color: red;}
+    50% { background-color: yellow;}
   }
+
+  @keyframes colorChange2 {
+    0%,100% { background-color: green;}
+    50% { background-color: gold;}
+  }
+
+@keyframes  moverResume{
+    0%,100% { transform:sKewY(-10deg);}
+
+     50% { transform:sKewY(10deg);}
+    
+}
 
 .second-captcha{
 margin-left: 1px;
@@ -16,20 +28,19 @@ margin-left: 1px;
 
 h1{
     margin-left: 5px;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 #resume-box
 {
     font-family: Papyrus;
-    border:dotted greenyellow 10px;
+    border: dashed greenyellow 10px;
     border-radius:10px;
     margin:50px;
     margin-left: 5rem;
     padding: 20px;
     max-width: 500px;
-    transform: skewY(7deg);
-
+    animation: moverResume 6s infinite;
 }
 
 #resume-inputs
@@ -59,4 +70,10 @@ h1{
   }
   .nohigh::selection {
     background: transparent;
+  }
+
+  #description{
+      background-color: aqua;
+      animation: colorChange2 2s infinite;
+      text-shadow: 2px 2px green;
   }
