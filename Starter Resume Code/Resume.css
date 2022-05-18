@@ -3,6 +3,15 @@ body
     color: black;
 }
 
+.second-captcha{
+margin-left: 1px;
+}
+
+h1{
+    margin-left: 5px;
+    font-size: 1em;
+}
+
 #resume-box
 {
     font-family:Consolas;
@@ -26,3 +35,17 @@ body
     min-width:50px;
     font-family:Consolas;
 }
+
+.second-captcha{
+    border: 1px black solid;
+}
+
+.nohigh {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  .nohigh::selection {
+    background: transparent;
+  }
