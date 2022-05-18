@@ -35,7 +35,7 @@ function getRandomArbitrary(min, max) {
 
 
 function testGEO(){
-    var url = 'http://open.mapquestapi.com/nominatim/v1/reverse.php?key=8KsEsIPedqvLbbCeDm4TA5uUxCLAe7Cn&format=json&lat=' + document.getElementById("lat").value + '&lon=' + document.getElementById("long").value;
+    var url = 'https://open.mapquestapi.com/nominatim/v1/reverse.php?key=8KsEsIPedqvLbbCeDm4TA5uUxCLAe7Cn&format=json&lat=' + document.getElementById("lat").value + '&lon=' + document.getElementById("long").value;
     fetch(url,{mode: 'cors'}).then(function(response) {
         return response.json();
       })
