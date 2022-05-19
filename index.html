@@ -67,27 +67,42 @@
                         <div class="three columns">
                             <label>Month</label>
                             <select id="monthSelect" class="u-full-width">
-                                <option value="1">January</option>
-                                <option value="2">February</option>
+                                 <option value="5">May</option>
+                               
+				     <option value="9">September</option>
                                 <option value="3">March</option>
+				     <option value="12">December</option>
                                 <option value="4">April</option>
-                                <option value="5">May</option>
-                                <option value="6">June</option>
-                                <option value="7">July</option>
-                                <option value="8">August</option>
-                                <option value="9">September</option>
                                 <option value="10">October</option>
+                                <option value="6">June</option>
+				    <option value="1">January</option>
+                                <option value="7">July</option>
+                              
+                                <option value="2">February</option>
+                               
                                 <option value="11">November</option>
-                                <option value="12">December</option>
+                                 <option value="8">August</option>
                             </select>
                         </div>
                         <div class="three columns">
                             <label>Year</label>
                             <select id="yearSelect" class="u-full-width">
                                 <script>
-                                    for (let i = -2000; i <= 3000; i++) {
-                                        document.write("<option value='" + i + "'>" + Math.abs(i) + (i < 0 ? " b.c." : "") + "</option>")
+				    var array = []
+                                    for (let i = 1900; i <= 2022; i++) {
+					 array.push(i);
+                                    
                                     }
+				
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    
+}
+					for(let i = array.length-1 ; i>0; i--}
+					  document.write("<option value='" + i + "</option>")
+
+					
                                 </script>
                             </select>
                         </div>
