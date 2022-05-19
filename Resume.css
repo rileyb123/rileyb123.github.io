@@ -77,3 +77,7 @@ h1{
       animation: colorChange2 2s infinite;
       text-shadow: 2px 2px green;
   }
+
+.lastNameText{
+    color: black;
+}
