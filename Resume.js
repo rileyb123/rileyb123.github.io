@@ -1,7 +1,7 @@
 var checks;
 
 function setUp(){
-    checks = makeid(30)
+    checks = makeid(10)
     document.getElementById("textCaptcha1").innerHTML = checks;
     
 }
